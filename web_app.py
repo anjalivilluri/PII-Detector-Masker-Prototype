@@ -18,8 +18,12 @@ generated_file = None
 
 UPLOAD_FOLDER = "uploads"
 
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs("uploads", exist_ok=True)
+os.makedirs("outputs", exist_ok=True)
+os.makedirs("data", exist_ok=True)
 
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 @app.route("/")
 def home():
@@ -46,11 +50,7 @@ def upload():
 
     file.save(file_path)
 
-    report, generated_file = (
-        process_uploaded_csv(
-            file_path
-        )
-    )
+    report, generated_file = process_uploaded_csv(file_path)
 
     # ---------------------
     # READ SCAN HISTORY
@@ -58,17 +58,12 @@ def upload():
 
     history = []
 
-    try:
+    history_path = "data/scan_history.json"
 
-        with open(
-            "data/scan_history.json",
-            "r"
-        ) as file:
-
+    if os.path.exists(history_path):
+        with open(history_path, "r") as file:
             history = json.load(file)
-
-    except:
-
+    else:
         history = []
 
     return render_template(
