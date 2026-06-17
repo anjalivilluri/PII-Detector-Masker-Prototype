@@ -14,8 +14,11 @@ Team Members
 
 Name| Role
 V. Anjali| Project Lead, Full Stack Development, Integration, Documentation
+
 S. Venkata Hemanth Kumar| Backend Development
+
 K. Saisri| Testing & Validation
+
 S. Sri Ramya| Documentation & Demo Support
 
 ---
