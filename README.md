@@ -409,8 +409,7 @@ Demo Video
 
 Video Link:
 
-https://drive.google.com/file/d/1IuKbajBTZIG8qC1WsZ0JRC5N1ttMLY1P/view?usp=drivesdk
-
+https://drive.google.com/file/d/1Q3Z4wnrsEdrfMWcrBx-0Bt_xS6HxQ48Y/view?usp=drivesdk
 ---
 # Live Demo
 https://pii-detector-masker-prototype.onrender.com
